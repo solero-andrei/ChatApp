@@ -9,6 +9,7 @@ namespace ChatApp_Controller.Interface
 {
     public interface IUsersView : IViewModel, IMessage
     {
+        void SetController(UserController controller);
         void RefreshMessages();
         void OpenMessage();
         void OpenFriends();

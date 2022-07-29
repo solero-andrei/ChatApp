@@ -109,5 +109,10 @@ namespace ChatAppDataAccess.Tests
         {
             throw new NotImplementedException();
         }
+
+        public void SetController(UserController controller)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

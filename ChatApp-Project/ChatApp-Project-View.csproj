@@ -289,15 +289,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ChatApp-Controller\ChatApp-Controller.csproj">
-      <Project>{6F242939-2E9D-4DC5-929A-AD50D42ECCD0}</Project>
-      <Name>ChatApp-Controller</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ChatApp-Model\ChatApp-Model.csproj">
-      <Project>{DC88F8CD-5CAC-4296-AE68-BBB116DFD193}</Project>
-      <Name>ChatApp-Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

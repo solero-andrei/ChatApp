@@ -138,7 +138,6 @@
             this.btnSend.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnSend.Size = new System.Drawing.Size(49, 49);
             this.btnSend.TabIndex = 3;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // txtMessage
             // 

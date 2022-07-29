@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace ChatAppDataAccess
 {
-    public interface IUserProcessor
+    public interface IRepository
     {
-        User ReadData(string sp);
+        List<SqlParameter> parameters { get; set; }
+        SqlDataReader ReadData(string sp);
         void InsertData(string sp);
     }
 }

@@ -19,6 +19,7 @@ namespace ChatApp_Controller
         {
             _usersView = usersView;
             messageProcessor = new MessageProcessing(usersView);
+            usersView.SetController(this);
         }
 
         public void SendMessage()

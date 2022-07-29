@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\IMessage.cs" />
+    <Compile Include="Interface\IMesssageModel.cs" />
     <Compile Include="Interface\IUsersView.cs" />
     <Compile Include="Interface\IViewModel.cs" />
     <Compile Include="MessageProcessing.cs" />

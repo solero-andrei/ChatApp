@@ -8,10 +8,10 @@ using System.Data.SqlClient;
 
 namespace ChatAppDataAccess
 {
-    public class UserProcessor
+    public class Repository : IRepository
     {
-        List<SqlParameter> parameters;
-        public UserProcessor(List<SqlParameter> parameters)
+        public List<SqlParameter> parameters { get; set; }
+        public Repository(List<SqlParameter> parameters)
         {
             this.parameters = parameters;
         }
@@ -45,23 +45,5 @@ namespace ChatAppDataAccess
 
             return reader;
         }
-
-        public List<MessageModel> GetMessages(string sp)
-        {
-            List<MessageModel> output = new List<MessageModel>();
-            var data = ReadData(sp);
-
-            while (data.Read())
-            {
-                output.Add(new MessageModel
-                {
-                    MessageContent = data["UserMessage"].ToString()
-                });
-            }
-
-            data.Close();
-            return output;    
-        }
-
     }
 }

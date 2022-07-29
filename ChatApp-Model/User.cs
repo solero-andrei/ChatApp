@@ -14,7 +14,7 @@ namespace ChatApp_Model
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public List<User> UserFriend { get; set; } = new List<User>();
+        public List<User> UserFriend { get; set; }
 
         /// <summary>
         /// Set basic details of User
