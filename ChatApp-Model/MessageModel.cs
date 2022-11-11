@@ -14,5 +14,6 @@ namespace ChatApp_Model
         public DateTime DateSent { get; set; }
         public TimeSpan TimeSent { get; set; }
         public string MessageContent { get; set; }
+        public string MessageStatus { get; set; }
     }
 }

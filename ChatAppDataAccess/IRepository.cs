@@ -10,8 +10,8 @@ namespace ChatAppDataAccess
 {
     public interface IRepository
     {
-        List<SqlParameter> parameters { get; set; }
+        List<SqlParameter> Parameters { get; set; }
         SqlDataReader ReadData(string sp);
-        void InsertData(string sp);
+        void Modify_InsertData(string sp);
     }
 }

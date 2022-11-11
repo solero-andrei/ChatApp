@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatApp_Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace ChatApp_Project
 {
-    public partial class UserStatus : Krypton.Toolkit.KryptonForm
+    public partial class MessageSentImage : UserControl
     {
-        public UserStatus()
+        public MessageSentImage(MessageModel message)
         {
             InitializeComponent();
+
+            _ViewHelper.ChatImageProcessor(sentImage, message.MessageContent);
         }
     }
 }

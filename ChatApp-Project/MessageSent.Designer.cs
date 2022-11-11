@@ -30,19 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.userImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.txtMessageSent = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.statusRefresher = new System.Windows.Forms.Timer(this.components);
+            this.messageToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ShadowPanel1
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.userImage);
-            this.guna2ShadowPanel1.Controls.Add(this.label1);
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Controls.Add(this.txtMessageSent);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(3, 6);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
@@ -51,33 +50,31 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(494, 106);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
-            // label1
+            // txtMessageSent
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(19, 11);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(414, 85);
-            this.label1.TabIndex = 0;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // userImage
-            // 
-            this.userImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.userImage.ImageRotate = 0F;
-            this.userImage.Location = new System.Drawing.Point(434, 46);
-            this.userImage.Name = "userImage";
-            this.userImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.userImage.Size = new System.Drawing.Size(52, 50);
-            this.userImage.TabIndex = 4;
-            this.userImage.TabStop = false;
+            this.txtMessageSent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(235)))));
+            this.txtMessageSent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessageSent.ForeColor = System.Drawing.Color.Black;
+            this.txtMessageSent.Location = new System.Drawing.Point(51, 10);
+            this.txtMessageSent.Name = "txtMessageSent";
+            this.txtMessageSent.Padding = new System.Windows.Forms.Padding(5);
+            this.txtMessageSent.Size = new System.Drawing.Size(431, 85);
+            this.txtMessageSent.TabIndex = 0;
+            this.txtMessageSent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 100;
-            this.guna2Elipse1.TargetControl = this.label1;
+            this.guna2Elipse1.TargetControl = this.txtMessageSent;
+            // 
+            // statusRefresher
+            // 
+            this.statusRefresher.Enabled = true;
+            this.statusRefresher.Interval = 1;
+            // 
+            // messageToolTip
+            // 
+            this.messageToolTip.UseFading = false;
             // 
             // MessageSent
             // 
@@ -89,7 +86,6 @@
             this.Name = "MessageSent";
             this.Size = new System.Drawing.Size(500, 112);
             this.guna2ShadowPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,8 +93,9 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox userImage;
+        private System.Windows.Forms.Label txtMessageSent;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Timer statusRefresher;
+        private System.Windows.Forms.ToolTip messageToolTip;
     }
 }

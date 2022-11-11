@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatApp_Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace ChatApp_Project
 {
     public partial class MessageReceived : UserControl
     {
-        public MessageReceived()
+        public MessageReceived(MessageModel message)
         {
             InitializeComponent();
+            this.label1.Text = message.MessageContent;
+            _ViewHelper.ImageProcessor(userImage, message.MessageFrom.UserID);
         }
     }
 }

@@ -8,24 +8,21 @@ using System.Data.SqlClient;
 
 namespace ChatAppDataAccess
 {
-    public class Repository : IRepository
+    public abstract class Repository : IRepository
     {
-        public List<SqlParameter> parameters { get; set; }
-        public Repository(List<SqlParameter> parameters)
-        {
-            this.parameters = parameters;
-        }
+        public List<SqlParameter> Parameters { get; set; } = new List<SqlParameter>();
+        public SqlConnection cn;
 
-        public void InsertData(string sp)
+        public void Modify_InsertData(string sp)
         {
-            using (SqlConnection cn = new SqlConnection(ConnectionString.Connection))
+            using (cn = new SqlConnection(ConnectionString.Connection))
             using (SqlCommand command = new SqlCommand())
             {
                 cn.Open();
                 command.Connection = cn;
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.CommandText = sp;
-                command.Parameters.AddRange(parameters.ToArray());
+                command.Parameters.AddRange(Parameters.ToArray());
 
                 command.ExecuteNonQuery();
             }
@@ -33,14 +30,14 @@ namespace ChatAppDataAccess
 
         public SqlDataReader ReadData(string sp)
         {
-            SqlConnection cn = new SqlConnection(ConnectionString.Connection);
+            cn = new SqlConnection(ConnectionString.Connection);
             SqlCommand command = new SqlCommand();
 
             cn.Open();
             command.Connection = cn;
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.CommandText = sp;
-            command.Parameters.AddRange(parameters.ToArray());
+            command.Parameters.AddRange(Parameters.ToArray());
             SqlDataReader reader = command.ExecuteReader();
 
             return reader;

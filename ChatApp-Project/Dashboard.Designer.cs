@@ -28,16 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.wrapper = new System.Windows.Forms.Panel();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.SuspendLayout();
             // 
             // wrapper
             // 
+            this.wrapper.BackColor = System.Drawing.Color.White;
             this.wrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wrapper.Location = new System.Drawing.Point(0, 0);
             this.wrapper.Name = "wrapper";
             this.wrapper.Size = new System.Drawing.Size(530, 649);
             this.wrapper.TabIndex = 0;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.TargetForm = this;
             // 
             // Dashboard
             // 
@@ -46,10 +53,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(530, 649);
             this.Controls.Add(this.wrapper);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chat Us";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
 
@@ -58,6 +66,7 @@
         #endregion
 
         private System.Windows.Forms.Panel wrapper;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }
 
